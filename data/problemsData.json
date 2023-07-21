@@ -1,0 +1,93 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "title": "Palindrome Number",
+      "question": "Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.",
+      "examples": [
+        {
+          "input": "Input: 121",
+          "output": "Output: true"
+        },
+        {
+          "input": "Input: -121",
+          "output": "Output: false"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "121",
+          "expected_output": "true"
+        },
+        {
+          "input": "-121",
+          "expected_output": "false"
+        },
+        {
+          "input": "10",
+          "expected_output": "false"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Reverse String",
+      "question": "Write a function that takes a string as input and returns the string reversed.",
+      "examples": [
+        {
+          "input": "Input: \"hello\"",
+          "output": "Output: \"olleh\"",
+          "explanation": ""
+        },
+        {
+          "input": "Input: \"world\"",
+          "output": "Output: \"dlrow\"",
+          "explanation": ""
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "\"hello\"",
+          "expected_output": "\"olleh\""
+        },
+        {
+          "input": "\"abcd\"",
+          "expected_output": "\"dcba\""
+        },
+        {
+          "input": "\"apple\"",
+          "expected_output": "\"elppa\""
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Reverse Integer",
+      "question": "Given a 32-bit signed integer, reverse digits of an integer.",
+      "examples": [
+        {
+          "input": "Input: 123",
+          "output": "Output: 321"
+        },
+        {
+          "input": "Input: -123",
+          "output": "Output: -321"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "123",
+          "expected_output": "321"
+        },
+        {
+          "input": "-123",
+          "expected_output": "-321"
+        },
+        {
+          "input": "120",
+          "expected_output": "21"
+        }
+      ]
+    }
+  ]
+}
