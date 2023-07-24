@@ -6,7 +6,11 @@ const rateLimit = require("express-rate-limit");
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+  })
+);
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 6,
@@ -23,4 +27,6 @@ app.get("/", function (req, res) {
 app.use("/api/problems", require("./routes/problems"));
 
 app.use(errorHandler);
-app.listen(port, "localhost");
+app.listen(port, () => {
+  console.log("runinnng");
+});
