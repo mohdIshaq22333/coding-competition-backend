@@ -50,13 +50,15 @@ const testProblem = asyncHandler(async (req, res) => {
     const allCases = problem?.test_cases?.map((val, index) => async () => {
       try {
         let triggerFunc = `(()=>main(${val?.input}))()`;
+        let timeoutId;
         const passed = await new Promise((resolve, reject) => {
-          s.run(`${req?.body?.code}\n${triggerFunc}`, (output) =>
-            resolve(output)
-          );
-          setTimeout(() => {
+          timeoutId = setTimeout(() => {
             reject(new Error("Code execution exceeded the maximum time."));
           }, 5000);
+          s.run(`${req?.body?.code}\n${triggerFunc}`, (output) => {
+            clearTimeout(timeoutId);
+            resolve(output);
+          });
         });
         casesResult.push({
           case: `Case ${index}`,
