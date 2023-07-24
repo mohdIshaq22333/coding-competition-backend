@@ -2,7 +2,7 @@
   "name": "test-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
@@ -17,8 +17,7 @@
     "express-async-handler": "^1.2.0",
     "express-rate-limit": "^6.7.1",
     "jsc": "^0.3.11",
-    "sandbox": "^0.8.6",
-    "vm2": "^3.9.19"
+    "sandbox": "^0.8.6"
   },
   "devDependencies": {
     "dotenv": "^16.3.1",

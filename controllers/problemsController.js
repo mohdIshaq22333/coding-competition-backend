@@ -57,6 +57,7 @@ const testProblem = asyncHandler(async (req, res) => {
             reject(new Error("Code execution exceeded the maximum time."));
           }, 5000);
           s.run(`${req?.body?.code}\n${triggerFunc}`, (output) => {
+            console.log("output", output);
             clearTimeout(timeoutId);
             resolve(output);
           });
