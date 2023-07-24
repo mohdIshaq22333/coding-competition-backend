@@ -33,7 +33,6 @@ const getProblem = asyncHandler(async (req, res) => {
   }
 });
 const testProblem = asyncHandler(async (req, res) => {
-  console.log("Test solution");
   try {
     const problem = problems?.data?.find((val) => val?.id == req?.params?.id);
     if (!problem) {
@@ -57,12 +56,10 @@ const testProblem = asyncHandler(async (req, res) => {
             reject(new Error("Code execution exceeded the maximum time."));
           }, 5000);
           s.run(`${req?.body?.code}\n${triggerFunc}`, (output) => {
-            console.log("output", output);
             clearTimeout(timeoutId);
             resolve(output);
           });
         });
-        console.log("passed", passed);
         casesResult.push({
           case: `Case ${index}`,
           passed:
