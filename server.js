@@ -3,12 +3,16 @@ const { errorHandler } = require("./middlewares/error");
 const app = express();
 const cors = require("cors");
 const rateLimit = require("express-rate-limit");
+const dotenv = require("dotenv");
+
+dotenv.config();
+
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: process.env.ALLOWED_URL || "http://localhost:5173",
   })
 );
 const apiLimiter = rateLimit({
